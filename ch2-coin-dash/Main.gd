@@ -15,6 +15,12 @@ func _ready():
 	$player.screensize = screensize
 	$player.hide()
 	new_game()
+	
+func _process(delta):
+	if playing and get_tree().get_nodes_in_group("coins").size() == 0:
+		level += 1
+		time_left += 5
+		spawn_coins()
 
 func new_game():
 	playing = true
