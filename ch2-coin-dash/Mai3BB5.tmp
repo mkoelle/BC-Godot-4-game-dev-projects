@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dht41u8hbbago"]
+[gd_scene load_steps=6 format=3 uid="uid://dht41u8hbbago"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_dcvdg"]
 [ext_resource type="Texture2D" uid="uid://dlenr60d5rs28" path="res://assets/grass.png" id="1_nttyh"]
 [ext_resource type="PackedScene" uid="uid://bgrm3pbkogi62" path="res://player.tscn" id="2_m83kf"]
 [ext_resource type="PackedScene" uid="uid://cvl4k5ofwknpn" path="res://coin.tscn" id="2_wfykm"]
 [ext_resource type="PackedScene" uid="uid://bt8y2xq7j6li" path="res://hud.tscn" id="5_bmsab"]
-[ext_resource type="AudioStream" uid="uid://6hkbbgvldh2h" path="res://assets/audio/Coin.wav" id="6_rfbau"]
-[ext_resource type="AudioStream" uid="uid://dbmep3umml738" path="res://assets/audio/EndSound.wav" id="7_4to8g"]
-[ext_resource type="AudioStream" uid="uid://bpckdb56vm888" path="res://assets/audio/Level.wav" id="8_w6f2f"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_dcvdg")
@@ -26,15 +23,6 @@ texture = ExtResource("1_nttyh")
 [node name="GameTimer" type="Timer" parent="."]
 
 [node name="Hud" parent="." instance=ExtResource("5_bmsab")]
-
-[node name="CoinSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_rfbau")
-
-[node name="EndSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_4to8g")
-
-[node name="LevelSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_w6f2f")
 
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="pickup" from="Player" to="." method="_on_player_pickup"]
