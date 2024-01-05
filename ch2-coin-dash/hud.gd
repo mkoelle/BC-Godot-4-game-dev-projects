@@ -17,7 +17,7 @@ func show_game_over():
 	show_message("Game Over")
 	await $Timer.timeout
 	$StartButton.show()
-	$Message.text = "Coin Dosh!"
+	$Message.text = "Coin Dash!"
 	$Message.show()
 	
 func  _on_timer_timeout():
