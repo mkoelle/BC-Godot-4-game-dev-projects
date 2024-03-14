@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvl4k5ofwknpn"]
+[gd_scene load_steps=15 format=3 uid="uid://dpyqh8vjiu0lf"]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_f816o"]
 [ext_resource type="Texture2D" uid="uid://dtq5usrwoadqm" path="res://assets/coin/coin-frame-1.png" id="2_kmpce"]
@@ -49,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_htbqm")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 12.0
 }]
@@ -68,3 +68,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0rfks")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
